@@ -1,153 +1,71 @@
-#root {
-  width: 100%;
-  max-width: 1200px;
-  min-width: 1150px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
+#root { max-width: 1200px; margin: 0 auto; padding: 2rem; text-align: center; }
 
-.NavBar {
-  background-color: rgb(76, 43, 226);
+.nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
-  border-radius: 8px;
-  height: 100%;
-}
-
-.NavDiv {
-  width: 33%;
-}
-
-.NavTitle {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.NavCart {
-  text-align: right;
-  padding: 0 10px;
-}
-
-.NavUser {
-  text-align: left;
-  padding: 0 10px;
-}
-
-.GroceriesApp-Container {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-
-  /* max-width: 800px; */
-  /* border: 1px solid white; */
-}
-
-.CartContainer {
-  width: 25%;
-  justify-content: center;
-
-  /* position: sticky; */
-  /* top: 0; Adjust this value as needed */
-  /* max-height: 100vh; Ensure it doesn't exceed the viewport height */
-  /* overflow-y: auto; Add scroll if content exceeds the container height */
-
-  /* border: 1px solid white; */
-}
-
-.CartCard {
-  display: flex;
-  /* flex-direction: column; */
-  justify-content: space-around;
-  align-items: center;
-  /* flex-wrap: wrap; */
-  border: 2px wheat solid;
+  background: #5a3ef0;
+  color: #fff;
+  padding: 10px 16px;
   border-radius: 10px;
-  margin: 10px;
-  padding: 5px;
-  background-color: rgb(43, 48, 54);
+  margin-bottom: 16px;
+}
+.hello { font-weight: 600; }
+.title { font-weight: 700; }
+.cart-icon { position: relative; }
+.dot { position: absolute; left: -10px; top: -6px; width: 8px; height: 8px; border-radius: 50%; background: transparent; }
+.dot-on { background: red; }
+
+.app-body {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
 }
 
-.CartCardInfo {
-  /* display: flex;
-  justify-content: space-around; */
-  width: 50%;
-}
-
-.ProductsContainer {
-  width: 75%;
-  max-width: 800px;
+.products-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  /* border: 1px solid white; */
+  gap: 12px;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-.ProductCard {
-  width: 20%;
-  border: 2px wheat solid;
+.product-card, .cart-card {
+  border: 1px solid #9aa4;
   border-radius: 10px;
-  margin: 10px;
-  padding: 5px;
+  padding: 10px;
+  background: #1f1f1f;
 }
+.product-card { width: 200px; }
+.product-card h3 { margin: 6px 0 2px 0; }
+.brand { font-size: 12px; opacity: 0.8; }
+.price { margin: 6px 0; }
 
-.ProductQuantityDiv {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+.qty { display: flex; align-items: center; gap: 8px; margin: 6px 0; }
+.qty button { padding: 2px 8px; }
+.qty-val { min-width: 24px; display: inline-block; text-align: center; }
 
-.QuantityBtn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 25px;
-  height: 25px;
-  border: 1px solid white;
-  border-radius: 50%;
-  cursor: pointer;
-  margin: 0 5px;
-}
-.QuantityBtn:hover {
-  background-color: rgb(76, 43, 226);
-}
+.cart-container { width: 340px; text-align: left; }
+.empty-msg { opacity: 0.8; }
+.cart-card { display: flex; align-items: center; gap: 8px; }
+.cart-title { min-width: 120px; }
+.cart-price, .cart-sub { font-weight: 700; }
 
-img {
-  height: 50px;
-  border-radius: 5px;
-}
+.cart-card img { flex: 0 0 auto; }
+.cart-title { flex: 1 1 auto; }
+.cart-price { flex: 0 0 auto; }
+.cart-sub { flex: 0 0 auto; }
+.cart-actions { display: flex; gap: 8px; margin-top: 12px; }
+button.danger { background: #b31616; }
+button.success { background: #138a1a; }
 
-.counter-container {
-  /* border: 1px solid white; */
-  display: flex;
-  width: 70%;
-  height: 20px;
-  justify-content: space-around;
-  align-items: center;
-  margin: 5px auto;
+@media screen and (max-width: 900px) {
+  .product-card { width: 45%; }
 }
-
-.counter-button {
-  width: 15px;
-  height: 15px;
-  border: 1px solid white;
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-.CartListBtns {
-  display: flex;
-  justify-content: space-around;
-}
-
-.RemoveButton {
-  background-color: rgb(190, 0, 0);
-}
-
-#BuyButton {
-  background-color: green;
-  width: 50%;
+@media screen and (max-width: 600px) {
+  .app-body { flex-direction: column; }
+  .products-container { justify-content: center; }
+  .product-card { width: 90%; }
+  .cart-container { width: 100%; }
 }
